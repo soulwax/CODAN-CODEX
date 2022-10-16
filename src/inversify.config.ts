@@ -1,17 +1,13 @@
 import "reflect-metadata";
 require('dotenv').config(); // Recommended way of loading dotenv
 import { Container } from "inversify";
-import { TYPES } from "./types";
+import { TYPES, DiscordIntents } from "./types";
 import { Bot } from "./bot";
 import { Client } from "discord.js";
 
 const INTENTS = process.env.DISCORD_INTENTS ? process.env.DISCORD_INTENTS.split(',') : []
 
 let container = new Container();
-
-type DiscordIntents = {
-    [key: string]: number
-}
 
 let discordIntentBitField : (DiscordIntents) = {
     GUILDS: 1 << 0,                         // 1 default
