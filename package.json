@@ -4,9 +4,11 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "build": "tsc",
     "start": "node src/index.js",
     "watch": "tsc -p tsconfig.json -w",
-    "test": "mocha -r ts-node/register \"tests/**/*.spec.ts\""
+    "test": "mocha -r ts-node/register \"tests/**/*.spec.ts\"",
+    "debug": "nodemon src/index.js --exec ts-node --inspect --extensions ts --ignore src/tests --inspect-port=9229"
   },
   "author": "",
   "license": "ISC",
@@ -25,5 +27,11 @@
     "mocha": "^10.0.0",
     "ts-mockito": "^2.6.1",
     "ts-node": "^10.9.1"
+  },
+  "prettier": {
+    "singleQuote": true,
+    "trailingComma": "none",
+    "semi": false,
+    "tabWidth": 2
   }
 }
