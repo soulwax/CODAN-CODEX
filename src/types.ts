@@ -1,9 +1,9 @@
 export const TYPES = {
-    Bot: Symbol("Bot"),
-    Client: Symbol("Client"),
-    Token: Symbol("Token")
-  }
+  Bot: Symbol('Bot'),
+  Client: Symbol('Client'),
+  Token: Symbol('Token')
+}
 
 export type DiscordIntents = {
-    [key: string]: number
+  [key: string]: number
 }
