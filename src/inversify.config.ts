@@ -5,11 +5,15 @@ import { TYPES } from "./types";
 import { Bot } from "./bot";
 import { Client } from "discord.js";
 
-const INTENTS = process.env.DISCORD_INTENTS.split(',')
+const INTENTS = process.env.DISCORD_INTENTS ? process.env.DISCORD_INTENTS.split(',') : []
 
 let container = new Container();
 
-let discordIntentBitField = {
+type DiscordIntents = {
+    [key: string]: number
+}
+
+let discordIntentBitField : (DiscordIntents) = {
     GUILDS: 1 << 0,                         // 1 default
     GUILD_MEMBERS: 1 << 1,                  // 2
     GUILD_BANS: 1 << 2,                     // 4
@@ -48,7 +52,8 @@ let calculateBulkIntents = (all: boolean, boundary: number) => {
 let calculateSpecificIntents = (intents: string[]) => {
     let calculatedIntents = 1
     intents.forEach(intent => {
-        calculatedIntents |= discordIntentBitField[intent]
+        let intentValue : number = discordIntentBitField[intent]?.valueOf()
+        calculatedIntents |= intentValue
     })
     console.log(`intents calculated: ${calculatedIntents}`)
     return calculatedIntents - 1
