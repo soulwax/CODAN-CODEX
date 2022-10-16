@@ -5,7 +5,7 @@ import { TYPES, DiscordIntents } from "./types";
 import { Bot } from "./bot";
 import { Client } from "discord.js";
 
-const INTENTS = process.env.DISCORD_INTENTS ? process.env.DISCORD_INTENTS.split(',') : []
+const INTENTS = process.env.DISCORD_INTENTS?.split(',') || []
 
 let container = new Container();
 
