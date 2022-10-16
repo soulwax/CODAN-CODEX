@@ -22,3 +22,28 @@ export const DiscordIntentBitField: DiscordIntents = {
   AUTO_MODERATION_CONFIGURATION: 1 << 20, // 1048576
   AUTO_MODERATION_EXECUTION: 1 << 21 // 2097152
 }
+
+export const calculateBulkIntents = (all: boolean, boundary: number) => {
+    let intents = 1
+    let boundaryIntents: number = boundary ? boundary : 0
+    if (all) {
+      // override boundary
+      boundaryIntents = 19
+    }
+    // or all intents
+    for (let i = 0; i < boundaryIntents; i++) {
+      intents |= DiscordIntentBitField[Object.keys(DiscordIntentBitField)[i]]
+    }
+    console.log(`intents calculated: ${intents}`)
+    return intents - 1
+  }
+  
+export const calculateSpecificIntents = (intents: string[]) => {
+    let calculatedIntents = 1
+    intents.forEach((intent) => {
+      let intentValue: number = DiscordIntentBitField[intent]?.valueOf()
+      calculatedIntents |= intentValue
+    })
+    console.log(`intents calculated: ${calculatedIntents}`)
+    return calculatedIntents - 1
+  }
