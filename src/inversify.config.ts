@@ -6,6 +6,7 @@ import { Client } from 'discord.js'
 import { calculateBulkIntents, calculateSpecificIntents } from './intents'
 import { CommandResponder } from './services/command-responder'
 import { CommandListener } from './services/command-listener'
+
 const INTENTS = process.env.DISCORD_INTENTS?.split(',') || []
 
 let container = new Container()

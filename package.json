@@ -7,7 +7,8 @@
     "start": "node dist/index.js",
     "watch": "tsc -p tsconfig.json -w",
     "test": "mocha -r ts-node/register \"tests/**/*.spec.ts\"",
-    "debug": "nodemon dist/index.js --exec ts-node --inspect --extensions ts --ignore src/tests --inspect-port=9229"
+    "debug": "nodemon dist/index.js --exec ts-node --inspect --extensions ts --ignore src/tests --inspect-port=9229",
+    "pm2": "pm2 start dist/index.js --interpreter ts-node --name CODAN --watch --ignore-watch=\"src/tests\" --node-args=\"--inspect --inspect-port=9229 \""
   },
   "author": "",
   "license": "ISC",
