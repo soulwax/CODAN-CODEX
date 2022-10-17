@@ -4,6 +4,8 @@ import { TYPES } from './types'
 import { Bot } from './bot'
 import { Client } from 'discord.js'
 import { calculateBulkIntents, calculateSpecificIntents } from './intents'
+import { CommandResponder } from './services/command-responder'
+import { CommandListener } from './services/command-listener'
 const INTENTS = process.env.DISCORD_INTENTS?.split(',') || []
 
 let container = new Container()
@@ -34,5 +36,15 @@ if (INTENTS[0] === 'all') {
 container
   .bind<string>(TYPES.Token)
   .toConstantValue(process.env.DISCORD_BOT_TOKEN ?? '')
+
+container
+  .bind<CommandResponder>(TYPES.CommandResponder)
+  .to(CommandResponder)
+  .inSingletonScope()
+
+container
+  .bind<CommandListener>(TYPES.CommandListener)
+  .to(CommandListener)
+  .inSingletonScope()
 
 export default container
