@@ -1,9 +1,9 @@
 import 'reflect-metadata'
 import { Container } from 'inversify'
-import { TYPES, DiscordIntents } from './types'
+import { TYPES } from './types'
 import { Bot } from './bot'
 import { Client } from 'discord.js'
-import { DiscordIntentBitField, calculateBulkIntents, calculateSpecificIntents } from './intents'
+import { calculateBulkIntents, calculateSpecificIntents } from './intents'
 const INTENTS = process.env.DISCORD_INTENTS?.split(',') || []
 
 let container = new Container()
