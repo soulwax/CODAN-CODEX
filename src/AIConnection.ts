@@ -1,8 +1,15 @@
 import got from 'got'
+import { inject, injectable } from 'inversify'
+import { TYPES } from './types'
+import { Bot } from './bot'
 
-class AIConnection {
+@injectable()
+export class AICoFnnection {
     private readonly openaiKey : string
-    constructor(openaiKey: string) {
+    private readonly bot : Bot
+    constructor(openaiKey: string, @inject(TYPES.Bot) bot: Bot)
+    {
+        this.bot = bot;
         this.openaiKey = openaiKey;
     }
 
