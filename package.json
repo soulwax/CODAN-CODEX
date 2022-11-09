@@ -16,6 +16,7 @@
     "@types/node": "^18.7.14",
     "discord.js": "^14.3.0",
     "dotenv": "^16.0.2",
+    "got": "^12.5.2",
     "inversify": "^6.0.1",
     "reflect-metadata": "^0.1.13",
     "typescript": "^4.8.2"
