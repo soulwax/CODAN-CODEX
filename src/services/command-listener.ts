@@ -2,7 +2,7 @@ import { injectable } from 'inversify'
 
 @injectable()
 export class CommandListener {
-  private regexp = ['!who', '!roll', '!help']
+  private regexp = ['!who', '!roll', '!help', '!code']
 
   public isWhoCommand(message: string): boolean {
     return message.search(this.regexp[0]) >= 0
@@ -14,5 +14,9 @@ export class CommandListener {
 
   public isHelpCommand(message: string): boolean {
     return message.search(this.regexp[2]) >= 0
+  }
+
+  public isCodeCommand(message: string): boolean {
+    return message.search(this.regexp[3]) >= 0
   }
 }
