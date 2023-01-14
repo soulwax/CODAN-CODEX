@@ -19,7 +19,8 @@
     "dotenv": "^16.0.2",
     "got": "^12.5.3",
     "inversify": "^6.0.1",
-    "reflect-metadata": "^0.1.13"
+    "reflect-metadata": "^0.1.13",
+    "tslib": "^2.4.1"
   },
   "devDependencies": {
     "@types/chai": "^4.3.3",
