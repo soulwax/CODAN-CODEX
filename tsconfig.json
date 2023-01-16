@@ -1,44 +1,34 @@
 {
-    "compilerOptions": {
-      "target": "ESNext",
-      "module": "commonjs",      
-      "moduleResolution": "node",
-      "rootDir": "./src/",
-      "outDir": "./dist/",
-      "strict": true,
-      "importHelpers": true,
-      "experimentalDecorators": true,
-      "esModuleInterop": true,
-      "skipLibCheck": true,
-      "allowSyntheticDefaultImports": true,
-      "forceConsistentCasingInFileNames": true,
-      "removeComments": true,
-      "lib": [
-        "es6",
-        "dom"
-      ],
-      "sourceMap": false,
-      "baseUrl": "./",
-      "types": [
-        // add node as an option
-        "node",
-        "reflect-metadata"
-      ],
-      "typeRoots": [
-        // add path to @types
-        "node_modules/@types"
-      ],
-      "emitDecoratorMetadata": true,
-      "resolveJsonModule": true,
-    },
-    "files": [
-      "src/index.ts"
+  "compilerOptions": {
+    "target": "ESNext",
+    "module": "commonjs",
+    "moduleResolution": "node",
+    "rootDir": "./src/",
+    "outDir": "./dist/",
+    "strict": true,
+    "importHelpers": true,
+    "experimentalDecorators": true,
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+    "allowSyntheticDefaultImports": true,
+    "forceConsistentCasingInFileNames": true,
+    "removeComments": true,
+    "lib": ["es6", "dom"],
+    "sourceMap": false,
+    "baseUrl": "./",
+    "types": [
+      // add node as an option
+      "node",
+      "reflect-metadata"
     ],
-    "include": [
-      "./**/*.ts"
+    "typeRoots": [
+      // add path to @types
+      "node_modules/@types"
     ],
-    "exclude": [
-      "node_modules",
-      "dist"
-    ]
-  }
+    "emitDecoratorMetadata": true,
+    "resolveJsonModule": true
+  },
+  "files": ["src/index.ts"],
+  "include": ["./**/*.ts"],
+  "exclude": ["node_modules", "dist"]
+}

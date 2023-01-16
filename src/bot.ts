@@ -8,6 +8,7 @@ export class Bot {
   private client: Client
   private readonly token: string
   private commandResponder: CommandResponder
+  private temperature: number = 0.5
 
   constructor(
     @inject(TYPES.Client) client: Client,
@@ -36,5 +37,13 @@ export class Bot {
     })
 
     return this.client.login(this.token)
+  }
+
+  public setTempreture(tempreture: number): void {
+    this.temperature = tempreture
+  }
+
+  public getTempreture(): number {
+    return this.temperature
   }
 }
