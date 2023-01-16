@@ -1,0 +1,29 @@
+{
+    "configurations": [
+        {
+            "type": "command",
+            "name": "watch",
+            "program": "yarn",
+            "args": [
+                "watch"
+            ]
+        },
+        {
+            "type": "command",
+            "name": "debug",
+            "program": "yarn",
+            "args": [
+                "debug"
+            ]
+        },
+        {
+            "type": "command",
+            "name": "start",
+            "program": "yarn",
+            "args": [
+                "start"
+            ]
+        },
+
+    ]
+}

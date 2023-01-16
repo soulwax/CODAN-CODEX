@@ -4,22 +4,23 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "node dist/index.js",
+    "start": "node --experimental-modules dist/index.js",
     "watch": "tsc -p tsconfig.json -w",
     "test": "mocha -r ts-node/register \"tests/**/*.spec.ts\"",
-    "debug": "nodemon dist/index.js --exec ts-node --inspect --extensions ts --ignore src/tests --inspect-port=9229",
+    "debug": "nodemon dist/index.js --experimental-modules --exec ts-node --inspect --extensions ts --ignore src/tests --inspect-port=9229 --node_args=\"--experimental-modules \"",
     "pm2": "pm2 start dist/index.js --name CODAN --watch --ignore-watch=\"src/tests\" --node-args=\"--inspect --inspect-port=9229 \""
   },
   "author": "",
-  "license": "ISC",
+  "license": "GPL-3.0",
   "dependencies": {
+    "@types/got": "^9.6.12",
     "@types/node": "^18.7.14",
     "discord.js": "^14.3.0",
     "dotenv": "^16.0.2",
-    "got": "^12.5.2",
+    "got": "^12.5.3",
     "inversify": "^6.0.1",
     "reflect-metadata": "^0.1.13",
-    "typescript": "^4.8.2"
+    "tslib": "^2.4.1"
   },
   "devDependencies": {
     "@types/chai": "^4.3.3",
@@ -27,7 +28,8 @@
     "chai": "^4.3.6",
     "mocha": "^10.0.0",
     "ts-mockito": "^2.6.1",
-    "ts-node": "^10.9.1"
+    "ts-node": "^10.9.1",
+    "typescript": "^4.9.4"
   },
   "prettier": {
     "singleQuote": true,

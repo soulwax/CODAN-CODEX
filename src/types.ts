@@ -4,7 +4,9 @@ export const TYPES = {
   Token: Symbol('Token'),
   CommandResponder: Symbol('CommandResponder'),
   CommandListener: Symbol('CommandListener'),
-  APIClient: Symbol('APIClient'),
+  ApiClient: Symbol('ApiClient'),
+  Headers: Symbol('Headers'),
+  BaseURL: Symbol('BaseURL')
 }
 
 export type DiscordIntents = {

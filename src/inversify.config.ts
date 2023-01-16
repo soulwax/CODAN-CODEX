@@ -6,6 +6,7 @@ import { Client } from 'discord.js'
 import { calculateBulkIntents, calculateSpecificIntents } from './intents'
 import { CommandResponder } from './services/command-responder'
 import { CommandListener } from './services/command-listener'
+const { ApiClient } = require('./services/api-client')
 
 const INTENTS = process.env.DISCORD_INTENTS?.split(',') || []
 
@@ -47,5 +48,18 @@ container
   .bind<CommandListener>(TYPES.CommandListener)
   .to(CommandListener)
   .inSingletonScope()
+
+container
+  .bind<typeof ApiClient>(TYPES.ApiClient)
+  .to(ApiClient)
+  .inSingletonScope()
+
+container
+  .bind<string>(TYPES.BaseURL)
+  .toConstantValue(process.env.API_BASE_URL ?? '')
+
+container
+  .bind<string>(TYPES.Headers)
+  .toConstantValue(process.env.API_HEADERS ?? '')
 
 export default container
