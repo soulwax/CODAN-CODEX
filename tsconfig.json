@@ -16,15 +16,6 @@
     "lib": ["es6", "dom"],
     "sourceMap": false,
     "baseUrl": "./",
-    "types": [
-      // add node as an option
-      "node",
-      "reflect-metadata"
-    ],
-    "typeRoots": [
-      // add path to @types
-      "node_modules/@types"
-    ],
     "emitDecoratorMetadata": true,
     "resolveJsonModule": true
   },

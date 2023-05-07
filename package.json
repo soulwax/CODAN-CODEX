@@ -13,8 +13,6 @@
   "author": "",
   "license": "GPL-3.0",
   "dependencies": {
-    "@types/got": "^9.6.12",
-    "@types/node": "^18.7.14",
     "discord.js": "^14.3.0",
     "dotenv": "^16.0.2",
     "got": "^12.5.3",
@@ -25,16 +23,13 @@
   "devDependencies": {
     "@types/chai": "^4.3.3",
     "@types/mocha": "^9.1.1",
+    "@types/got": "^9.6.12",
+    "@types/node": "^18.7.14",
+    "@types/reflect-metadata": "^0.1.0",
     "chai": "^4.3.6",
     "mocha": "^10.0.0",
     "ts-mockito": "^2.6.1",
     "ts-node": "^10.9.1",
     "typescript": "^4.9.4"
-  },
-  "prettier": {
-    "singleQuote": true,
-    "trailingComma": "none",
-    "semi": false,
-    "tabWidth": 2
   }
 }
